@@ -3,13 +3,13 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+import todos from './modules/todos'
+import settings from './modules/appSettings'
+
+export const store = new Vuex.Store({
+	modules: {
+		todos,
+		settings
+	},
+	strict: process.env.NODE_ENV !== 'production'
+});
